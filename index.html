@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-color: #ffffff;
+        }
+
+        html,
+        body {
+            overflow: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-y: hidden;
+        }
+
+
+        .bat {
+            height: 350px;
+            margin-left: 290px;
+            margin-top: 200px;
+            transform: rotate(17deg) skew(5deg) rotateY(-25deg);
+        }
+
+        body:hover .bat {
+            animation: bat 3s ease-in forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes bat {
+            0% {
+                transform: rotate(17deg) skew(5deg) rotateY(-25deg);
+            }
+
+            50% {
+                transform: rotate(-25deg) skew(3deg);
+            }
+
+            100% {
+                transform: rotate(-15deg) skew(5deg) rotateY(-25deg);
+            }
+
+        }
+
+        .ball {
+            height: 35px;
+            margin-right: 250px;
+            transition: all 3s ease-in;
+        }
+
+        body:hover .ball {
+            animation: right-to-left 4.5s ease-in forwards;
+        }
+
+        @keyframes right-to-left {
+            0% {
+                transform: translate(0px, 0%);
+            }
+
+            25% {
+                transform: translate(-600px, 250px) rotate(1080deg);
+            }
+
+            50% {
+                transform: translate(-1147px, 135px) rotate(2160deg);
+            }
+
+            75% {
+                transform: translate(-600px, -750px);
+
+            }
+
+            100% {
+                transform: translate(0px, 460px) rotate(2160deg);
+            }
+
+        }
+
+        .graund {
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            transform: scale(1.3);
+        }
+
+        .filder {
+            height: 400px;
+            margin-left: -20px;
+            margin-top: 230px;
+            position: absolute;
+        }
+
+        body:hover .filder {
+            animation: back-filder 4.1s ease-in-out;
+        }
+
+        @keyframes back-filder {
+            0% {
+                height: 400px;
+            }
+
+            20% {
+                height: 394px;
+            }
+
+            40% {
+                height: 400px;
+            }
+
+            60% {
+                height: 394px;
+            }
+
+            80% {
+                height: 400px;
+            }
+
+            100% {
+                height: 394px;
+            }
+        }
+
+        .six-div {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            margin-left: 700px;
+        }
+
+        .six {
+            position: absolute;
+            transform: scale(0);
+            opacity: 0;
+            height: 700px;
+            z-index: 1000;
+        }
+
+        body:hover .six {
+            animation: six 3s ease-in forwards;
+            animation-delay: 3.8s;
+        }
+
+        @keyframes six {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+        }
+
+        .man-six {
+            height: 400px;
+            margin-top: 600px;
+            position: absolute;
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        body:hover .man-six {
+            animation: man-six 5.5s ease-in forwards;
+            animation-delay: 3.8s;
+        }
+
+        @keyframes man-six {
+            0% {
+                margin-left: 0px;
+                transform: scale(0.3);
+                opacity: 0;
+            }
+
+            50% {
+                margin-left: 1500px;
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                margin-left: 2000px;
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+
+        .stump {
+            position: absolute;
+            height: 320px;
+            margin-left: 190px;
+            margin-top: 280px;
+            transform: skew(2deg) rotateY(35deg);
+        }
+
+        .boll-fild {
+            height: 350px;
+            z-index: 70;
+            position: absolute;
+            margin-left: 2000px;
+            margin-top: -200px;
+        }
+
+        body:hover .boll-fild {
+            animation: boll-fild 5s ease-in forwards;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes boll-fild {
+            0% {
+                margin-left: 2000px;
+            }
+
+            25% {
+                transform: rotate(5deg);
+            }
+
+            50% {
+                margin-left: 1500px;
+                transform: rotate(-15deg);
+                opacity: 1;
+            }
+
+            75% {
+                margin-left: 1500px;
+                transform: rotateY(180deg);
+            }
+
+            100% {
+                margin-left: 2000px;
+                transform: rotateY(180deg);
+                opacity: 0.5;
+            }
+        }
+
+        .fild-sad {
+            height: 100px;
+            position: absolute;
+            margin-left: 1520px;
+            margin-top: -500px;
+            z-index: 500;
+            opacity: 0;
+        }
+
+        body:hover .fild-sad {
+            animation: fild-sad 1.6s ease-in forwards;
+            animation-delay: 5s;
+
+        }
+
+        @keyframes fild-sad {
+            0% {
+                margin-left: 1520px;
+                opacity: 1;
+            }
+
+            100% {
+                margin-left: 2000px;
+                opacity: 0.9;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main" style="z-index: -1;">
+
+        <img class="graund" src="/class - 6 cricket/img/Untitled-1.jpg" alt="my graund">
+        <img class="bat" src="/class - 6 cricket/img/bat.png" alt="my ball">
+        <img class="ball" src="/class - 6 cricket/img/my ball.webp" alt="my bat">
+        <img class="stump" src="/class - 6 cricket/img/stump .png" alt="">
+
+        <img class="filder" src="/class - 6 cricket/img/filder.png" alt="my filder">
+        <img class="boll-fild" src="/class - 6 cricket/img/boll-fild.png" alt="">
+        <img class="fild-sad" src="/class - 6 cricket/img/sad img.png" alt="">
+
+        <div class="six-div">
+            <img class="six" src="/class - 6 cricket/img/six.png" alt="six">
+        </div>
+
+        <img class="man-six" src="/class - 6 cricket/img//man-six.png" alt="">
+    </div>
+
+</body>
+
+</html>
